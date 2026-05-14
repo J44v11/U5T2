@@ -35,6 +35,24 @@ public class App {
                         gestor.añadirPlato(new Plato(nombre, tipo, precio, puntuacion));
                         JOptionPane.showMessageDialog(null, "Plato añadido correctamente.");
                         break;
+                    
+                    case 2:
+                        int posicionPlatoEnLista = Validaciones.solicitarEntero("Introduce el número de lista del plato a editar (0 a " + (gestor.getTamaño() - 1) + "):"); // Pedimos al usuario la posición del plato a editar, mostrando el rango válido según el tamaño de la lista
+                        if (posicionPlatoEnLista == -1) break; // Si el usuario cancela, salimos del caso sin hacer nada
+                        Plato platoExistente = gestor.getPlato(posicionPlatoEnLista); // Obtenemos el plato existente en esa posición para mostrar sus datos actuales
+                        
+                        if (platoExistente != null) {
+                            String nuevoNombre = Validaciones.solicitarString("Nuevo nombre (Actual: " + platoExistente.getNombre() + "):");
+                            String nuevoTipo = Validaciones.solicitarString("Nuevo tipo (Actual: " + platoExistente.getTipo() + "):");
+                            double nuevoPrecio = Validaciones.solicitarDouble("Nuevo precio (Actual: " + platoExistente.getPrecio() + "):");
+                            int nuevaPuntuacion = Validaciones.solicitarEntero("Nueva puntuacion (Actual: " + platoExistente.getPuntuacion() + "):");
+                            
+                            gestor.editarPlato(posicionPlatoEnLista, new Plato(nuevoNombre, nuevoTipo, nuevoPrecio, nuevaPuntuacion));
+                            JOptionPane.showMessageDialog(null, "Plato actualizado.");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Plato no encontrado.");
+                        }
+                        break;
                 
                     default:
                         JOptionPane.showMessageDialog(null, "Opción incorrecta.");
