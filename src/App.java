@@ -79,6 +79,15 @@ public class App {
                             JOptionPane.showMessageDialog(null, "He encontrado el plato. Ahora ha sido eliminado.");
                         }
                         break;
+
+                    case 5:
+                        salir = true;
+                        JOptionPane.showMessageDialog(null, "Adiosss!");
+                        break;
+                    case -1: 
+                        salir = true; 
+                        JOptionPane.showMessageDialog(null, "Adiosss!");
+                        break;
                 
                     default:
                         JOptionPane.showMessageDialog(null, "Opcion incorrecta.");
