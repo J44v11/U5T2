@@ -17,4 +17,11 @@ public class GestorPlatos {
             listaPlatos.remove(posicionEnLista);
         }
     }
+
+    public Plato getPlato(int posicionEnLista) {
+        if (posicionEnLista >= 0 && posicionEnLista < listaPlatos.size()) {
+            return listaPlatos.get(posicionEnLista);
+        }
+        return null;
+    }
 }
