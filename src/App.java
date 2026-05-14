@@ -71,9 +71,17 @@ public class App {
 
                         JOptionPane.showMessageDialog(null, textoRanking);
                         break;
+                    
+                    case 4:
+                        int platoParaEliminar = Validaciones.solicitarEntero("Introduce el numero de plato en lista a eliminar (0 a " + (gestor.getTamaño() - 1) + "):");
+                        if (platoParaEliminar != -1) {
+                            gestor.eliminarPlato(platoParaEliminar);
+                            JOptionPane.showMessageDialog(null, "He encontrado el plato. Ahora ha sido eliminado.");
+                        }
+                        break;
                 
                     default:
-                        JOptionPane.showMessageDialog(null, "Opción incorrecta.");
+                        JOptionPane.showMessageDialog(null, "Opcion incorrecta.");
                 }
             } catch (Exception error) {
                 JOptionPane.showMessageDialog(null, "Se ha producido un error inesperado: " + error.getMessage());
