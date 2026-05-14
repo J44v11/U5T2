@@ -27,4 +27,10 @@ public class GestorPlatos {
     public int getTamaño() {
         return listaPlatos.size();
     }
+
+    public void editarPlato(int posicionEnLista, Plato p) {
+        if (posicionEnLista >= 0 && posicionEnLista < listaPlatos.size()) {
+            listaPlatos.set(posicionEnLista, p);
+        }
+    }
 }
