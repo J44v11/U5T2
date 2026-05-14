@@ -24,4 +24,7 @@ public class GestorPlatos {
         }
         return null;
     }
+    public int getTamaño() {
+        return listaPlatos.size();
+    }
 }
