@@ -11,4 +11,10 @@ public class GestorPlatos {
     public void añadirPlato(Plato p) {
         listaPlatos.add(p);
     }
+
+    public void eliminarPlato(int posicionEnLista) {
+        if (posicionEnLista >= 0 && posicionEnLista < listaPlatos.size()) {
+            listaPlatos.remove(posicionEnLista);
+        }
+    }
 }
