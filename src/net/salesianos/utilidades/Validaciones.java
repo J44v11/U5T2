@@ -26,4 +26,15 @@ public class Validaciones {
             }
         }
     }
+
+    public static String solicitarString(String mensaje) {
+        String input = JOptionPane.showInputDialog(mensaje);
+
+        while (input != null && input.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Se ha cometido un error. El texto no puede estar vacio.");
+            input = JOptionPane.showInputDialog(mensaje);
+        }
+
+        return input;
+    }
 }
