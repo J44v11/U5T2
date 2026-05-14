@@ -2,6 +2,7 @@ import net.salesianos.modelo.GestorPlatos;
 import net.salesianos.modelo.Plato;
 import net.salesianos.utilidades.Validaciones;
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -53,6 +54,23 @@ public class App {
                             JOptionPane.showMessageDialog(null, "Plato no encontrado.");
                         }
                         break;
+
+                    case 3: 
+                        if (gestor.getTamaño() == 0) {
+                            JOptionPane.showMessageDialog(null, "No hay platos guardados.");
+                            break;
+                        }
+
+                        String textoRanking = "RANKING DE PLATOS:\n\n";
+
+                        ArrayList<Plato> platosOrdenados = gestor.getPlatosOrdenados();
+                        for (int posicion = 0; posicion < platosOrdenados.size(); posicion++) {
+                            Plato plato = platosOrdenados.get(posicion);
+                            textoRanking += (posicion + 1) + ". " + plato.toString() + "\n";
+                        }
+
+                        JOptionPane.showMessageDialog(null, textoRanking);
+                        break;
                 
                     default:
                         JOptionPane.showMessageDialog(null, "Opción incorrecta.");
@@ -62,4 +80,6 @@ public class App {
             }
         }
     }
+
+    
 }
