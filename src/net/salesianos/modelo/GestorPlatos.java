@@ -7,4 +7,8 @@ public class GestorPlatos {
     public GestorPlatos() {
         this.listaPlatos = new ArrayList<>();
     }
+
+    public void añadirPlato(Plato p) {
+        listaPlatos.add(p);
+    }
 }
