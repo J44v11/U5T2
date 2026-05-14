@@ -19,6 +19,26 @@ public class App {
                         + "Elige una opción:";
 
                 int opcion = Validaciones.solicitarEntero(menu);
+
+                switch (opcion) {
+
+                    case 1:
+                        String nombre = Validaciones.solicitarString("Nombre del plato:");
+                        if (nombre == null) break;
+                        String tipo = Validaciones.solicitarString("Tipo (Entrante, Primer plato, Segundo plato, Postre):");
+                        if (tipo == null) break;
+                        double precio = Validaciones.solicitarDouble("Precio del plato:");
+                        if (precio == -1.0) break;
+                        int puntuacion = Validaciones.solicitarEntero("Puntuacion (1-5):");
+                        if (puntuacion == -1) break;
+
+                        gestor.añadirPlato(new Plato(nombre, tipo, precio, puntuacion));
+                        JOptionPane.showMessageDialog(null, "Plato añadido correctamente.");
+                        break;
+                
+                    default:
+                        JOptionPane.showMessageDialog(null, "Opción incorrecta.");
+                }
             } catch (Exception error) {
                 JOptionPane.showMessageDialog(null, "Se ha producido un error inesperado: " + error.getMessage());
             }
