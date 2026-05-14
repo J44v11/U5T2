@@ -32,6 +32,12 @@ public class App {
                         if (precio == -1.0) break;
                         int puntuacion = Validaciones.solicitarEntero("Puntuacion (1-5):");
                         if (puntuacion == -1) break;
+                        while (puntuacion < 1 || puntuacion > 5) {
+                            JOptionPane.showMessageDialog(null, "La puntuacion debe estar entre 1 y 5.");
+                            puntuacion = Validaciones.solicitarEntero("Puntuacion (1-5):");
+                            if (puntuacion == -1) break;
+                        }
+                        if (puntuacion == -1) break;
 
                         gestor.añadirPlato(new Plato(nombre, tipo, precio, puntuacion));
                         JOptionPane.showMessageDialog(null, "Plato añadido correctamente.");
@@ -46,7 +52,14 @@ public class App {
                             String nuevoNombre = Validaciones.solicitarString("Nuevo nombre (Actual: " + platoExistente.getNombre() + "):");
                             String nuevoTipo = Validaciones.solicitarString("Nuevo tipo (Actual: " + platoExistente.getTipo() + "):");
                             double nuevoPrecio = Validaciones.solicitarDouble("Nuevo precio (Actual: " + platoExistente.getPrecio() + "):");
-                            int nuevaPuntuacion = Validaciones.solicitarEntero("Nueva puntuacion (Actual: " + platoExistente.getPuntuacion() + "):");
+                            int nuevaPuntuacion = Validaciones.solicitarEntero("Nueva puntuacion (1-5) (Actual: " + platoExistente.getPuntuacion() + "):");
+                            if (nuevaPuntuacion == -1) break;
+                            while (nuevaPuntuacion < 1 || nuevaPuntuacion > 5) {
+                                JOptionPane.showMessageDialog(null, "La puntuacion debe estar entre 1 y 5.");
+                                nuevaPuntuacion = Validaciones.solicitarEntero("Nueva puntuacion (1-5) (Actual: " + platoExistente.getPuntuacion() + "):");
+                                if (nuevaPuntuacion == -1) break;
+                            }
+                            if (nuevaPuntuacion == -1) break;
                             
                             gestor.editarPlato(posicionPlatoEnLista, new Plato(nuevoNombre, nuevoTipo, nuevoPrecio, nuevaPuntuacion));
                             JOptionPane.showMessageDialog(null, "Plato actualizado.");
