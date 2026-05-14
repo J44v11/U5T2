@@ -12,4 +12,21 @@ public class Plato {
         this.precio = precio;
         this.puntuacion = puntuacion;
     }
+
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public String getTipo() { return tipo; }
+    public void setTipo(String tipo) { this.tipo = tipo; }
+
+    public double getPrecio() { return precio; }
+    public void setPrecio(double precio) { this.precio = precio; }
+
+    public int getPuntuacion() { return puntuacion; }
+    public void setPuntuacion(int puntuacion) { this.puntuacion = puntuacion; }
+
+    @Override
+    public String toString() {
+        return "Tiene una puntuación de " + puntuacion + "estrellas. | " + nombre + " (" + tipo + ") - " + precio + "€";
+    }
 }
