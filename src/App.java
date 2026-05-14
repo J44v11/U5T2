@@ -4,6 +4,13 @@ import net.salesianos.utilidades.Validaciones;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
+/**
+ * Esta es la clase principal del programa que actúa como punto de entrada. Se encarga de gestionar
+ * toda la interfaz de usuario a través de un menú interactivo que permite al usuario realizar
+ * operaciones como añadir nuevos platos, editar platos existentes, eliminar platos, consultar
+ * el ranking de platos ordenados por puntuación y salir del programa. Utiliza diálogos gráficos
+ * (JOptionPane) para la entrada y salida de datos, proporcionando una experiencia de usuario amigable.
+ */
 public class App {
     public static void main(String[] args) throws Exception {
         GestorPlatos gestor = new GestorPlatos();

@@ -1,6 +1,15 @@
 package net.salesianos.utilidades;
 import javax.swing.JOptionPane;
 
+/**
+ * Esta clase es una utilidad que proporciona métodos estáticos para solicitar datos al usuario
+ * de forma segura a través de diálogos gráficos. Cada método está especializado en un tipo de
+ * dato diferente: hay un método para solicitar números enteros, otro para números decimales y
+ * otro para cadenas de texto. Todos los métodos incluyen validación y manejo automático de errores,
+ * de manera que si el usuario introduce un dato con formato incorrecto, el programa le muestra
+ * un mensaje de error y vuelve a pedir el dato. También permiten que el usuario cancele la entrada
+ * retornando valores especiales como -1 para indicar cancelación.
+ */
 public class Validaciones {
     
     public static int solicitarEntero(String mensaje) {

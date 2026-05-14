@@ -2,6 +2,14 @@ package net.salesianos.modelo;
 
 import java.util.ArrayList;
 
+/**
+ * Esta clase se encarga de gestionar toda la colección de platos del programa. Mantiene una
+ * lista interna de platos y proporciona métodos para realizar operaciones fundamentales como
+ * añadir nuevos platos a la lista, eliminar platos existentes, editar los datos de un plato
+ * y recuperar un plato específico por su posición. Además, ofrece métodos para obtener información
+ * sobre la colección, como el número total de platos, y permite obtener todos los platos ordenados
+ * por puntuación en orden descendente para mostrar un ranking a los usuarios.
+ */
 public class GestorPlatos {
     private ArrayList<Plato> listaPlatos;
 
